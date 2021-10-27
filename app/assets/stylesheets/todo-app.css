@@ -105,7 +105,6 @@ margin-right: 8px;
   visibility: hidden;
   margin-left: 10px;
 }
-
-.TodoItem :hover .Todopage-img {
+.TodoItem:hover .TodoItem-image {
   visibility: visible;
 }
