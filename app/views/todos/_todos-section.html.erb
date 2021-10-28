@@ -1,13 +1,17 @@
 <section class="TodoSection">
         <div class="TodoSectionTitle">
           <p class="TodoSectionTitle-text"><%= section_title %></p>
-          <p class="TodoSectionTitle-RemainingCount"><%=todos.completed.count%>/<%= todos.count%></p>
+          <p class="TodoSectionTitle-RemainingCount"><%=todos.completed.count%>/<%=todos.count %></p>
         </div>
         <ul>
           <% todos.all.each do |todo| %>
             <li class="TodoItem">
               <label class="TodoItem-container">
-                <input class="TodoItemCheckBox" type="checkbox"> <%= todo.todo_text%>
+                <%if todo.completed %>
+                  <input class="TodoItemCheckBox" type="checkbox" checked> <p class="TodoItemCheckbox-text"><%= todo.todo_text %></p>
+                <% else %>
+                  <input class="TodoItemCheckBox" type="checkbox" > <%= todo.todo_text%>
+                <% end %>
                 <% if show_due_date%>
                   <p class="TodoItem-DateLabel"><%= todo.due_date.to_s(:short) %></p>
                 <% end %>

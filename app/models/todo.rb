@@ -5,10 +5,14 @@ class Todo < ActiveRecord::Base
     end
     def due_today?
         due_date == Date.today
-      end
+    end
+    def workdone
+        completed
+    end
 
     def self.overdue
-        where("due_date < ?", Date.today)
+        #where("due_date < ? and completed = ", Date.today,"false")
+        where("completed = ? and due_date < ?", false, Date.today)
     end
     def self.due_today
         where("due_date = ?", Date.today)
