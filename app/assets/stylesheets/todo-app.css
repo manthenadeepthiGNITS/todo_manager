@@ -108,6 +108,6 @@ margin-right: 8px;
 .TodoItem:hover .TodoItem-image {
   visibility: visible;
 }
-.TodoItemCheckbox-text{
+.TodoItem-completedtext{
   text-decoration-line: line-through;
 }
