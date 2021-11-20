@@ -1,2 +1,7 @@
-<p>welcome to home page</p>
-<p>if you are a new user,signup here</p>
+<h1 class="Home-title">welcome to home page</h1>
+<h3 class="Home-authenticate">
+if you are a new user,<%= link_to "sign up here", new_user_path %>
+</h3>
+<h3 class="Home-authenticate">
+if you are an existing user,<%= link_to "sign-in  here", new_sessions_path %>
+</h3>
